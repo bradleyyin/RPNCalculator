@@ -23,14 +23,14 @@ class StackTests: XCTestCase {
         // pop = pop item and return
         XCTAssertEqual(5, stack.pop())
         //peek = look at last item
-        XCTAssertEqual(3, stack.peak())
+        XCTAssertEqual(3, stack.peek())
         
         XCTAssertEqual(3, stack.pop())
         XCTAssertEqual(2, stack.pop())
         XCTAssertEqual(1, stack.pop())
         XCTAssertEqual(nil, stack.pop())
         
-        XCTAssertEqual(nil, stack.peak())
+        XCTAssertEqual(nil, stack.peek())
     }
     
 }

@@ -25,14 +25,7 @@ public struct DigitAccumulator {
         
     }
     public var value: Double? {
-        let numberString = digits.map { digit -> String in
-            switch digit {
-            case .number(let value):
-                return String(value)
-            case .decimalPoint:
-                return "."
-            }
-        }.joined()
+        let numberString = stringValue
         
         return Double(numberString)
     }
@@ -51,6 +44,16 @@ public struct DigitAccumulator {
         
         
         digits.append(digit)
+    }
+    public var stringValue: String {
+        return digits.map { digit -> String in
+            switch digit {
+            case .number(let value):
+                return String(value)
+            case .decimalPoint:
+                return "."
+            }
+            }.joined()
     }
     
     public mutating func clear() {

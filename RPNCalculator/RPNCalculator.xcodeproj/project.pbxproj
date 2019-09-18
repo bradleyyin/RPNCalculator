@@ -12,6 +12,8 @@
 		759C644B233296CB00B3B000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759C6449233296CB00B3B000 /* LaunchScreen.storyboard */; };
 		759C6477233299C800B3B000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 759C6476233299C800B3B000 /* Main.storyboard */; };
 		759C6479233299F500B3B000 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C6478233299F500B3B000 /* CalculatorViewController.swift */; };
+		759C64AE2332B6CA00B3B000 /* RPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C649D2332A13800B3B000 /* RPN.framework */; };
+		759C64AF2332B6CA00B3B000 /* RPN.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 759C649D2332A13800B3B000 /* RPN.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +31,28 @@
 			remoteGlobalIDString = 759C6465233298BF00B3B000;
 			remoteInfo = RPNTests;
 		};
+		759C64B02332B6CA00B3B000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 759C64972332A13800B3B000 /* RPN.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 759C645B233298BF00B3B000;
+			remoteInfo = RPN;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		759C64B22332B6CA00B3B000 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				759C64AF2332B6CA00B3B000 /* RPN.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		759C643D233296C700B3B000 /* RPNCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPNCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759C64AE2332B6CA00B3B000 /* RPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,10 +134,12 @@
 				759C6439233296C700B3B000 /* Sources */,
 				759C643A233296C700B3B000 /* Frameworks */,
 				759C643B233296C700B3B000 /* Resources */,
+				759C64B22332B6CA00B3B000 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				759C64B12332B6CA00B3B000 /* PBXTargetDependency */,
 			);
 			name = RPNCalculator;
 			productName = RPNCalculator;
@@ -200,6 +226,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		759C64B12332B6CA00B3B000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RPN;
+			targetProxy = 759C64B02332B6CA00B3B000 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		759C6449233296CB00B3B000 /* LaunchScreen.storyboard */ = {
@@ -332,6 +366,7 @@
 		759C6450233296CB00B3B000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8367QTYVY6;
@@ -350,6 +385,7 @@
 		759C6451233296CB00B3B000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8367QTYVY6;
