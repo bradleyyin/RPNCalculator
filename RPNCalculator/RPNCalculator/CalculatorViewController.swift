@@ -70,18 +70,22 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func divideButtonTapped(_ sender: UIButton) {
+        addNumber()
         calculator.push(operator: .divide)
     }
     
     @IBAction func multiplyButtonTapped(_ sender: UIButton) {
+        addNumber()
         calculator.push(operator: .multiply)
     }
     
     @IBAction func subtractButtonTapped(_ sender: UIButton) {
+        addNumber()
         calculator.push(operator: .subtract)
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
+        addNumber()
         calculator.push(operator: .add)
     }
     
