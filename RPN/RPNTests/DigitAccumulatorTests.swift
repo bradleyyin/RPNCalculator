@@ -25,8 +25,36 @@ class DigitAccumulatorTests: XCTestCase {
         XCTAssertThrowsError(try digitAccumulator.add(.decimalPoint)) { (error) in
             if let error = error as? DigitAccumulatorError {
                 XCTAssertEqual(DigitAccumulatorError.extraDecimalPoint, error)
+            } else {
+                XCTFail()
             }
         }
-        //get number as double
+        
+        //get a double back
+        XCTAssertEqual(57.03, digitAccumulator.value)
+    }
+    
+    
+    
+    func testDoubleDigitNumberNotValid() throws {
+        var digitAccumulator = DigitAccumulator()
+        
+        
+        
+        XCTAssertThrowsError(try digitAccumulator.add(.number(99))) { (error) in
+            if let error = error as? DigitAccumulatorError {
+                XCTAssertEqual(DigitAccumulatorError.invalidNumber, error)
+            } else {
+                XCTFail()
+            }
+        }
+        
+        XCTAssertThrowsError(try digitAccumulator.add(.number(-1))) { (error) in
+            if let error = error as? DigitAccumulatorError {
+                XCTAssertEqual(DigitAccumulatorError.invalidNumber, error)
+            } else {
+                XCTFail()
+            }
+        }
     }
 }

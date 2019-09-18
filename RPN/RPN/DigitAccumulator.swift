@@ -24,6 +24,18 @@ public struct DigitAccumulator {
     public init () {
         
     }
+    public var value: Double? {
+        let numberString = digits.map { digit -> String in
+            switch digit {
+            case .number(let value):
+                return String(value)
+            case .decimalPoint:
+                return "."
+            }
+        }.joined()
+        
+        return Double(numberString)
+    }
     
     public mutating func add(_ digit: Digit) throws {
         switch digit {
@@ -31,8 +43,10 @@ public struct DigitAccumulator {
             if digits.contains(.decimalPoint) {
                 throw DigitAccumulatorError.extraDecimalPoint
             }
-        default:
-            print("Other")
+        case .number(let value):
+            if value > 9 || value < 0 {
+                throw DigitAccumulatorError.invalidNumber
+            }
         }
         
         
