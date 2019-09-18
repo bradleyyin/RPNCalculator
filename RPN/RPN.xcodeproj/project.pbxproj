@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		759C6466233298BF00B3B000 /* RPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C645C233298BF00B3B000 /* RPN.framework */; };
 		759C646D233298BF00B3B000 /* RPN.h in Headers */ = {isa = PBXBuildFile; fileRef = 759C645F233298BF00B3B000 /* RPN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		759C64A12332A1CE00B3B000 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C64A02332A1CE00B3B000 /* Stack.swift */; };
+		759C64A32332A1E300B3B000 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C64A22332A1E300B3B000 /* Calculator.swift */; };
+		759C64A52332A1F200B3B000 /* DigitAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C64A42332A1F200B3B000 /* DigitAccumulator.swift */; };
+		759C64A92332A33400B3B000 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C64A82332A33400B3B000 /* StackTests.swift */; };
+		759C64AB2332AB4C00B3B000 /* DigitAccumulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C64AA2332AB4C00B3B000 /* DigitAccumulatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +32,11 @@
 		759C6460233298BF00B3B000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		759C6465233298BF00B3B000 /* RPNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		759C646C233298BF00B3B000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		759C64A02332A1CE00B3B000 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		759C64A22332A1E300B3B000 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		759C64A42332A1F200B3B000 /* DigitAccumulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitAccumulator.swift; sourceTree = "<group>"; };
+		759C64A82332A33400B3B000 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		759C64AA2332AB4C00B3B000 /* DigitAccumulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitAccumulatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				759C645F233298BF00B3B000 /* RPN.h */,
+				759C64A02332A1CE00B3B000 /* Stack.swift */,
 				759C6460233298BF00B3B000 /* Info.plist */,
+				759C64A22332A1E300B3B000 /* Calculator.swift */,
+				759C64A42332A1F200B3B000 /* DigitAccumulator.swift */,
 			);
 			path = RPN;
 			sourceTree = "<group>";
@@ -79,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				759C646C233298BF00B3B000 /* Info.plist */,
+				759C64A82332A33400B3B000 /* StackTests.swift */,
+				759C64AA2332AB4C00B3B000 /* DigitAccumulatorTests.swift */,
 			);
 			path = RPNTests;
 			sourceTree = "<group>";
@@ -145,9 +160,11 @@
 				TargetAttributes = {
 					759C645B233298BF00B3B000 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					759C6464233298BF00B3B000 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -191,6 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759C64A12332A1CE00B3B000 /* Stack.swift in Sources */,
+				759C64A52332A1F200B3B000 /* DigitAccumulator.swift in Sources */,
+				759C64A32332A1E300B3B000 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759C64AB2332AB4C00B3B000 /* DigitAccumulatorTests.swift in Sources */,
+				759C64A92332A33400B3B000 /* StackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +359,7 @@
 		759C6471233298BF00B3B000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -354,6 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradleyyin.RPN;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -362,6 +386,7 @@
 		759C6472233298BF00B3B000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -387,6 +412,8 @@
 		759C6474233298BF00B3B000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8367QTYVY6;
 				INFOPLIST_FILE = RPNTests/Info.plist;
@@ -397,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradleyyin.RPNTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -405,6 +433,8 @@
 		759C6475233298BF00B3B000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8367QTYVY6;
 				INFOPLIST_FILE = RPNTests/Info.plist;
