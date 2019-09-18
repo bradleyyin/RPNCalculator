@@ -32,6 +32,10 @@ class DigitAccumulatorTests: XCTestCase {
         
         //get a double back
         XCTAssertEqual(57.03, digitAccumulator.value)
+        
+        digitAccumulator.clear()
+        
+        XCTAssertEqual(nil, digitAccumulator.value)
     }
     
     

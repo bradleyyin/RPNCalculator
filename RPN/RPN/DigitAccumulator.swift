@@ -52,4 +52,8 @@ public struct DigitAccumulator {
         
         digits.append(digit)
     }
+    
+    public mutating func clear() {
+        digits.removeAll()
+    }
 }
